@@ -1,0 +1,30 @@
+{
+  "name": "o_o",
+  "version": "0.0.1",
+  "description": "o_o HTTP/HTTPS proxy",
+  "main": "index.js",
+  "bin": {
+    "o_o": "proxy.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JacksonTian/o_o.git"
+  },
+  "bin": {
+    "o_o": "./bin/o_o"
+  },
+  "keywords": [
+    "HTTP/HTTPS",
+    "proxy"
+  ],
+  "dependencies": {
+    "commander": "*"
+  },
+  "author": "Jackson Tian",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "0e3a87197d188f79ab6cbb6b2f047070c635666e"
+}
