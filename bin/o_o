@@ -4,7 +4,7 @@ var program = require('commander');
 var proxy = require('../');
 
 program
-  .version('0.0.1')
+  .version(require('../package.json').version)
   .option('-p, --port [port]', 'Specify the port will listen on(8989 by default)', parseInt)
   .parse(process.argv);
 
@@ -14,10 +14,11 @@ proxy().listen(port, function () {
   console.log('Proxy server running at localhost:' + port);
   console.info('Network interfaces:');
   var interfaces = require('os').networkInterfaces();
+  var print = function (item) {
+    console.info('  ' + item.address + '\t' + item.family);
+  };
   for (var key in interfaces) {
     console.info(key);
-    interfaces[key].forEach(function (item) {
-      console.info('  ' + item.address + '\t' + item.family);
-    });
+    interfaces[key].forEach(print);
   }
 });
