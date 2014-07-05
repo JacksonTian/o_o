@@ -11,14 +11,14 @@ HTTP/HTTPS代理
 ## Usage
 ### 命令行
 
-```
-[sudo] npm install o_o -g
-o_o 8989
+```bash
+$ npm install o_o -g
+$ o_o 8989
 ```
 
 ### 脚本编程
 
-```
+```js
 var proxy = require('o_o');
 proxy().listen(8989);
 ```
