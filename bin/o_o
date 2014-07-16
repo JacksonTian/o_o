@@ -15,7 +15,11 @@ proxy().listen(port, function () {
   console.info('Network interfaces:');
   var interfaces = require('os').networkInterfaces();
   var print = function (item) {
-    console.info('  ' + item.address + '\t' + item.family);
+    if (item.internal) {
+      console.info('  ' + item.address + '\t' + item.family);
+    } else {
+      console.info('\x1B[32m  ' + item.address + '\x1B[39m\t' + item.family);
+    }
   };
   for (var key in interfaces) {
     console.info(key);
