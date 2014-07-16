@@ -1,6 +1,6 @@
 {
   "name": "o_o",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "o_o HTTP/HTTPS proxy",
   "main": "index.js",
   "bin": {
