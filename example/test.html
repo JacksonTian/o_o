@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <title>test</title>
+</head>
+<body>
+
+<script src="../node_modules/superagent/superagent.js"></script>
+<script>
+superagent.get('http://192.168.10.12/')
+  .set('Host', 'koa.dev')
+  .end(function (err, res) {
+    console.log(res.text);
+  });
+</script>
+</body>
+
+</html>
