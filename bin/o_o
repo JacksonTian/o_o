@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 
+var fs = require('fs');
 var program = require('commander');
 var proxy = require('../');
 
 program
   .version(require('../package.json').version)
   .option('-p, --port [port]', 'Specify the port will listen on(8989 by default)', parseInt)
+  .option('-f, --filename [filename]', 'Specify the hosts filename')
   .parse(process.argv);
 
 var port = program.port || 8989;
+var hosts = program.filename ? fs.readFileSync(program.filename).toString() : '';
 
-proxy().listen(port, function () {
+proxy(hosts).listen(port, function () {
   console.log('Proxy server running at localhost:' + port);
   console.info('Network interfaces:');
   var interfaces = require('os').networkInterfaces();
