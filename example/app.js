@@ -1,5 +1,5 @@
 var fs = require('fs');
-require('../')(fs.readFileSync('./hosts').toString()).listen(8890);
+require('../')(fs.readFileSync('./hosts', 'utf8').toString()).listen(8989);
 
 // or just
-// require('../')().listen(8890);
+// require('../')().listen(8989);
