@@ -11,7 +11,7 @@ program
   .parse(process.argv);
 
 var port = program.port || 8989;
-var hosts = program.filename ? fs.readFileSync(program.filename).toString() : '';
+var hosts = program.filename ? fs.readFileSync(program.filename, 'utf8') : '';
 
 proxy(hosts).listen(port, function () {
   console.log('Proxy server running at localhost:' + port);

@@ -16,11 +16,23 @@ $ npm install o_o -g
 $ o_o 8989
 ```
 
-### 脚本编程
+也可以加载额外的hosts文件:
+```bash
+$ o_o -f ./my_hosts
+```
 
+### 脚本编程
+#### 快速使用
 ```js
 var proxy = require('o_o');
 proxy().listen(8989);
+```
+
+#### 引入额外的hosts文件
+```js
+var proxy = require('o_o');
+var hosts = require('fs').readFileSync('./my_hosts', 'utf8');
+proxy(hosts).listen(8989);
 ```
 
 ## License
