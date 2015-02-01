@@ -21,7 +21,8 @@
     "proxy"
   ],
   "dependencies": {
-    "commander": "*"
+    "commander": "*",
+    "hosts-parser": "^0.3.0"
   },
   "author": "Jackson Tian",
   "license": "MIT",
