@@ -1,8 +1,9 @@
 #!/usr/bin/env node
+'use strict';
 
-var fs = require('fs');
-var program = require('commander');
-var proxy = require('../');
+const fs = require('fs');
+const program = require('commander');
+const proxy = require('../');
 
 program
   .version(require('../package.json').version)
@@ -10,8 +11,8 @@ program
   .option('-f, --filename [filename]', 'Specify the hosts filename')
   .parse(process.argv);
 
-var port = program.port || 8989;
-var hosts = program.filename ? fs.readFileSync(program.filename, 'utf8') : '';
+const port = program.port || 8989;
+const hosts = program.filename ? fs.readFileSync(program.filename, 'utf8') : '';
 
 proxy(hosts).listen(port, function () {
   console.log('Proxy server running at localhost:' + port);
@@ -24,6 +25,7 @@ proxy(hosts).listen(port, function () {
       console.info('\x1B[32m  ' + item.address + '\x1B[39m\t' + item.family);
     }
   };
+
   for (var key in interfaces) {
     console.info(key);
     interfaces[key].forEach(print);

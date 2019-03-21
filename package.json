@@ -1,13 +1,10 @@
 {
   "name": "o_o",
   "version": "0.0.3",
-  "description": "o_o HTTP/HTTPS proxy",
-  "main": "index.js",
-  "bin": {
-    "o_o": "proxy.js"
-  },
+  "description": "o_o: A simple HTTP/HTTPS proxy server",
+  "main": "lib/proxy.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --fix bin/o_o example/*.js lib/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,11 +18,13 @@
     "proxy"
   ],
   "dependencies": {
-    "commander": "*",
+    "commander": "^2.19.0",
     "hosts-parser": "^0.3.0"
   },
   "author": "Jackson Tian",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "gitHead": "0e3a87197d188f79ab6cbb6b2f047070c635666e"
+  "devDependencies": {
+    "eslint": "^5.15.3"
+  }
 }
