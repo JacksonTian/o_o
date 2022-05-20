@@ -14,7 +14,7 @@ HTTP/HTTPS 代理服务器
 
 ```bash
 $ npm install o_o -g
-$ o_o 8989
+$ o_o -p 8989
 ```
 
 也可以加载额外的hosts文件:
